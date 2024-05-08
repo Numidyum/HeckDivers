@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2j7habiugdr5"
-path="res://.godot/imported/Idle.png-83054ba27afb830fa8ba9daa87dd443b.ctex"
+uid="uid://chgbj563qtbt4"
+path="res://.godot/imported/CWalkLeft.png-2affb16cfad7d75f52a5aa7a75d1c84f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Idle.png"
-dest_files=["res://.godot/imported/Idle.png-83054ba27afb830fa8ba9daa87dd443b.ctex"]
+source_file="res://Sprites/CWalkLeft.png"
+dest_files=["res://.godot/imported/CWalkLeft.png-2affb16cfad7d75f52a5aa7a75d1c84f.ctex"]
 
 [params]
 
