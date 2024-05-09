@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d13nt0hdkv5iu"]
+[gd_scene load_steps=19 format=3 uid="uid://d13nt0hdkv5iu"]
 
 [ext_resource type="Texture2D" uid="uid://bvucliv2yoykm" path="res://Sprites/dungeon.png" id="1_i88fx"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_sl2sx"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bftjniqj6lryg" path="res://Sprites/Shop1.png" id="8_x42ug"]
 [ext_resource type="PackedScene" uid="uid://cn7bjl376exk8" path="res://Scenes/enemy.tscn" id="9_admf8"]
 [ext_resource type="Texture2D" uid="uid://16u5kin0v0mg" path="res://Sprites/Sample.png" id="9_bhm4y"]
+[ext_resource type="PackedScene" uid="uid://b8kkoj6ayjcq5" path="res://Scenes/enemyspawner.tscn" id="13_of0h2"]
+[ext_resource type="Script" path="res://Scripts/spawnInfo.gd" id="14_8loo2"]
 
 [sub_resource type="GDScript" id="GDScript_mi4pb"]
 script/source = "extends SubViewport
@@ -24,8 +26,16 @@ font_size = 12
 [sub_resource type="LabelSettings" id="LabelSettings_qceo5"]
 font = ExtResource("8_3sx77")
 
+[sub_resource type="Resource" id="Resource_ftf63"]
+script = ExtResource("14_8loo2")
+timeStart = 0
+timeEnd = 60
+enemy = ExtResource("9_admf8")
+enemyNum = 1
+enemySpawnDelay = 1
+
 [node name="World" type="Node2D"]
-position = Vector2(-336, 64)
+position = Vector2(-520, 272)
 script = ExtResource("1_sl2sx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -69,13 +79,11 @@ texture = ExtResource("1_i88fx")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/StaticBody2D"]
 polygon = PackedVector2Array(-96, 56, -120, 80, -120, -80, -96, -56)
 
-[node name="player" parent="." groups=["player"] instance=ExtResource("4_q1opb")]
-position = Vector2(144, 48)
-
 [node name="Merchant" parent="." instance=ExtResource("5_vo7xe")]
 position = Vector2(7.99997, -32)
 
 [node name="ShopPopup" type="Panel" parent="."]
+visible = false
 anchors_preset = -1
 anchor_left = -0.028
 anchor_top = -0.049
@@ -145,7 +153,10 @@ position = Vector2(80, 32)
 scale = Vector2(0.800001, 0.8)
 texture = ExtResource("9_bhm4y")
 
-[node name="enemy" parent="." instance=ExtResource("9_admf8")]
-position = Vector2(336, 24)
+[node name="enemyspawner" parent="." instance=ExtResource("13_of0h2")]
+spawns = Array[ExtResource("14_8loo2")]([SubResource("Resource_ftf63")])
+
+[node name="player" parent="." instance=ExtResource("4_q1opb")]
+position = Vector2(144, 48)
 
 [connection signal="pressed" from="ShopPopup/GunShop/buyButton" to="." method="_on_buy_button_pressed"]

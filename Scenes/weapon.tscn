@@ -8,7 +8,8 @@ script/source = "extends CollisionShape2D
 
 var canFire=true
 var bullet=preload(\"res://Scenes/Bullet.tscn\")
-
+var dmg = 15 #fırlatılabilen kılıcın hasarı
+var amount = 30 #atılabilirlik sınırlayıcısı kaç tane atabileceğimiz
 
 
 
@@ -16,13 +17,22 @@ func _physics_process(delta):
 	var mousePos=get_global_mouse_position()
 	look_at(mousePos)
 
+
+func shoot():
 	if Input.is_action_just_pressed(\"Fire\") and canFire:
 		var bulletinstance=bullet.instantiate()
 		bulletinstance.rotation=global_rotation
 		get_parent().add_child(bulletinstance)
+		bulletinstance.setDamage(dmg)
 		canFire=false
 		await get_tree().create_timer(0.2)
 		canFire=true
+		
+func _process(delta):
+	if Input.is_action_just_pressed(\"Fire\"):
+		if amount > 0:
+			amount = amount - 1
+			shoot()
 "
 
 [node name="weapon" type="CollisionShape2D"]

@@ -3,27 +3,27 @@ ea4bc82a6ad023ab7ee23ee620429895
 icon.svg::CompressedTexture2D::2131976541462335345::1715171734::1715171904::1::::<><>::
 ::res://Fonts/::1715186901
 Insignia Regular.otf::FontFile::2930712675409793553::1715186900::1715186901::1::::<><>::
-::res://Scenes/::1715266842
+::res://Scenes/::1715275599
 Bullet.tscn::PackedScene::8228757568590073196::1715246966::0::1::::<><>::res://Scripts/Bullet.gd<>uid://73xmjm5nr1wp::::res://Sprites/Bullet.png
-enemy.tscn::PackedScene::5751433834455365857::1715266842::0::1::::<><>::res://Scripts/enemy.gd<>uid://5m0lvr7k5xjt::::res://icon.svg
-enemyspawner.tscn::PackedScene::4723928992962617550::1715266842::0::1::::<><>::res://Scripts/enemyspawner.gd<>res://Scripts/spawnInfo.gd
+enemy.tscn::PackedScene::5751433834455365857::1715275598::0::1::::<><>::res://Scripts/enemy.gd<>uid://cue4fst2ohuuf::::res://Sprites/Bug.png
+enemyspawner.tscn::PackedScene::4723928992962617550::1715275598::0::1::::<><>::res://Scripts/enemyspawner.gd<>res://Scripts/spawnInfo.gd<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn
 hatacozum.tscn::PackedScene::6962536428932774898::1715244009::0::1::::<><>::res://Scenes/s.gd<>uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scenes/sd.gd<>res://Scripts/weapon.gd
-Merchant.tscn::PackedScene::8236147934194412885::1715266842::0::1::::<><>::uid://cjkqvlbokud3l::::res://Sprites/SUMY-Idle.png<>res://Scripts/playerDetector.gd<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
-Player.tscn::PackedScene::1149704052456346036::1715266842::0::1::::<><>::uid://836pwi2q5x5m::::res://Sprites/Character-AttackLeft.png<>uid://dn0vw6sebxhim::::res://Sprites/Character-Idle.png<>uid://doudfqljtmpr5::::res://Sprites/Character-Attack.png<>uid://c68gi8yelxwbl::::res://Scenes/weapon.tscn<>uid://dsjbhaxulgaip::::res://Sprites/Character-WalkLeft.png
-weapon.tscn::PackedScene::7017200344900248173::1715246966::0::1::::<><>::
-world.tscn::PackedScene::9042799137819890436::1715266842::0::1::::<><>::uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scripts/world.gd<>uid://d2j7habiugdr5::::res://Sprites/Idle.png<>uid://qm6ptggwhjbw::::res://Scenes/Player.tscn<>res://Scripts/minimapplayer.gd<>uid://dplwfhb2doho4::::res://Scenes/Merchant.tscn<>uid://co3xn7l74oxq7::::res://Sprites/Liberator.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn<>uid://16u5kin0v0mg::::res://Sprites/Sample.png
-::res://Scripts/::1715255663
+Merchant.tscn::PackedScene::8236147934194412885::1715275598::0::1::::<><>::uid://cjkqvlbokud3l::::res://Sprites/SUMY-Idle.png<>res://Scripts/playerDetector.gd<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
+Player.tscn::PackedScene::1149704052456346036::1715275598::0::1::::<><>::uid://836pwi2q5x5m::::res://Sprites/Character-AttackLeft.png<>uid://dn0vw6sebxhim::::res://Sprites/Character-Idle.png<>uid://doudfqljtmpr5::::res://Sprites/Character-Attack.png<>uid://c68gi8yelxwbl::::res://Scenes/weapon.tscn<>uid://dsjbhaxulgaip::::res://Sprites/Character-WalkLeft.png
+weapon.tscn::PackedScene::7017200344900248173::1715275599::0::1::::<><>::
+world.tscn::PackedScene::9042799137819890436::1715275598::0::1::::<><>::uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scripts/world.gd<>uid://d2j7habiugdr5::::res://Sprites/Idle.png<>uid://qm6ptggwhjbw::::res://Scenes/Player.tscn<>res://Scripts/minimapplayer.gd<>uid://dplwfhb2doho4::::res://Scenes/Merchant.tscn<>uid://dplr017l2hdd4::::res://Sprites/Shop.png<>uid://co3xn7l74oxq7::::res://Sprites/Liberator.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf<>uid://bftjniqj6lryg::::res://Sprites/Shop1.png<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn<>uid://16u5kin0v0mg::::res://Sprites/Sample.png<>uid://b8kkoj6ayjcq5::::res://Scenes/enemyspawner.tscn<>res://Scripts/spawnInfo.gd
+::res://Scripts/::1715270806
 Bullet.gd::GDScript::-1::1715244080::0::1::::<>Area2D<>::
-enemy.gd::GDScript::-1::1715254724::0::1::::<>CharacterBody2D<>::
-enemyspawner.gd::GDScript::-1::1715255663::0::1::::<>Node2D<>::
+enemy.gd::GDScript::-1::1715270806::0::1::::<>CharacterBody2D<>::
+enemyspawner.gd::GDScript::-1::1715270784::0::1::::<>Node2D<>::
 Marker2D.gd::GDScript::-1::1715246207::0::1::::<>Marker2D<>::
 minimapplayer.gd::GDScript::-1::1715175249::0::1::::<>CharacterBody2D<>::
 player.gd::GDScript::-1::1715173450::0::1::::<>CharacterBody2D<>::
 playerDetector.gd::GDScript::-1::1715188321::0::1::::<>Area2D<>::
-spawnInfo.gd::GDScript::-1::1715255663::0::1::::spawnInfo<>Resource<>::
+spawnInfo.gd::GDScript::-1::1715270367::0::1::::spawnInfo<>Resource<>::
 weapon.gd::GDScript::-1::1715243849::0::1::::<>CollisionShape2D<>::
 world.gd::GDScript::-1::1715253940::0::1::::<>Node2D<>::
-::res://Sprites/::1715266925
+::res://Sprites/::1715276235
 Bug.png::CompressedTexture2D::6186646448940191413::1715266735::1715266735::1::::<><>::
 Bullet.png::CompressedTexture2D::2305263986520135803::1715177269::1715177269::1::::<><>::
 Character-Attack.png::CompressedTexture2D::8183385354842025612::1715185875::1715185875::1::::<><>::
@@ -32,6 +32,8 @@ Character-Idle.png::CompressedTexture2D::8124642462753546368::1715178860::171517
 Character-Walk.png::CompressedTexture2D::6827860722266000258::1715187215::1715187216::1::::<><>::
 Character-WalkLeft.png::CompressedTexture2D::8441313890354670655::1715187215::1715187216::1::::<><>::
 dungeon.png::CompressedTexture2D::3901815486778564176::1715172023::1715172023::1::::<><>::
+hpTexture1.png::CompressedTexture2D::4428400881060496897::1715276235::1715276235::1::::<><>::
+hpTexture2.png::CompressedTexture2D::3402920311542569660::1715276235::1715276235::1::::<><>::
 Idle.png::CompressedTexture2D::9074895675353831068::1715171890::1715171890::1::::<><>::
 image.png::CompressedTexture2D::5232769438214318616::1715178763::1715178763::1::::<><>::
 Liberator.png::CompressedTexture2D::5814709160820039452::1715266735::1715266735::1::::<><>::

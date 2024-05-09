@@ -1,23 +1,34 @@
-[gd_scene load_steps=34 format=3 uid="uid://qm6ptggwhjbw"]
+[gd_scene load_steps=39 format=3 uid="uid://qm6ptggwhjbw"]
 
 [ext_resource type="Texture2D" uid="uid://836pwi2q5x5m" path="res://Sprites/Character-AttackLeft.png" id="1_edoyv"]
 [ext_resource type="Texture2D" uid="uid://dn0vw6sebxhim" path="res://Sprites/Character-Idle.png" id="1_psf8l"]
 [ext_resource type="Texture2D" uid="uid://doudfqljtmpr5" path="res://Sprites/Character-Attack.png" id="2_4ou4o"]
 [ext_resource type="PackedScene" uid="uid://c68gi8yelxwbl" path="res://Scenes/weapon.tscn" id="5_2uc4w"]
 [ext_resource type="Texture2D" uid="uid://dsjbhaxulgaip" path="res://Sprites/Character-WalkLeft.png" id="6_xq5a2"]
+[ext_resource type="Texture2D" uid="uid://boqnuoaqktprg" path="res://Sprites/hpTexture2.png" id="6_yh732"]
+[ext_resource type="Texture2D" uid="uid://b4dfd6se8oewf" path="res://Sprites/hpTexture1.png" id="7_16jo6"]
+[ext_resource type="Texture2D" uid="uid://16u5kin0v0mg" path="res://Sprites/Sample.png" id="8_skha3"]
+[ext_resource type="FontFile" uid="uid://bh0wn6qgr73cn" path="res://Fonts/Insignia Regular.otf" id="9_3mu0j"]
 
 [sub_resource type="GDScript" id="GDScript_q7yci"]
 script/source = "extends CharacterBody2D
 var speed=150
 var moveDir=\"none\"
 @onready var animation=$AnimatedSprite2D
+
+var attackDetector = false #attack yapabiliyor muyum? boolean
+var enemyInAttackRange = false #enemy'i görebiliyor muyum?
+var enemyAttackCooldown = true #enemy attack süresi boyunca icerde mi
+var health = 100
+ #can tanımladım
+var playerAlive = true #player canlı mı?
 func movement():
 	var moveDir = Input.get_vector(\"ui_left\",\"ui_right\",\"ui_up\",\"ui_down\")
 	velocity = moveDir * speed
 
 func playerAnim():
 	if velocity.length() == 0:
-		animation.play(\"walkidle\")
+		animation.play(\"idle\")
 	else:
 			var dir=\"idle\"
 			if velocity.x > 0 :
@@ -30,6 +41,32 @@ func _physics_process(delta):
 	playerAnim()
 	movement()
 	move_and_slide()
+	if health <= 0:
+		playerAlive = false
+		health = 0
+		self.queue_free()
+
+func player():
+	pass
+
+func hurt():
+	$CanvasLayer/hpbar.value-=0.5
+	if $CanvasLayer/hpbar.value==0:
+		get_tree().reload_current_scene()
+
+func _on_hitbox_body_entered(body):
+	if body.name==\"player\":
+		enemyInAttackRange = true 
+		
+
+func _on_hitbox_body_exited(body):
+	if body.name==\"player\":
+		enemyInAttackRange = false
+
+
+
+func _on_attack_cooldown_timeout():
+	enemyAttackCooldown = true
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isw4y"]
@@ -184,7 +221,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ya3uq")
 }],
 "loop": true,
-"name": &"walkidle",
+"name": &"idle",
 "speed": 7.0
 }, {
 "frames": [{
@@ -229,31 +266,72 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jw8pb"]
-size = Vector2(40, 64)
+size = Vector2(48, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0v6ur"]
 size = Vector2(40, 64)
 
-[node name="player" type="CharacterBody2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_7tprb"]
+font = ExtResource("9_3mu0j")
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-24, -32)
 motion_mode = 1
 script = SubResource("GDScript_q7yci")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 8)
 zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.10197, 0.110919)
 sprite_frames = SubResource("SpriteFrames_kbjc8")
-animation = &"walkidle"
-autoplay = "walkidle"
+animation = &"idle"
+autoplay = "idle"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("RectangleShape2D_jw8pb")
 
 [node name="playercoll" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0v6ur")
 
 [node name="weapon" parent="." instance=ExtResource("5_2uc4w")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_top = 600.0
+offset_right = 208.0
+offset_bottom = 648.0
+
+[node name="hpbar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 95.0
+offset_top = 615.0
+offset_right = 151.0
+offset_bottom = 639.0
+max_value = 3.0
+step = 0.5
+value = 3.0
+texture_under = ExtResource("6_yh732")
+texture_progress = ExtResource("7_16jo6")
+
+[node name="sample" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(23, 623)
+texture = ExtResource("8_skha3")
+
+[node name="globalsample" type="Label" parent="CanvasLayer"]
+offset_left = 39.0
+offset_top = 615.0
+offset_right = 79.0
+offset_bottom = 638.0
+text = "X0"
+label_settings = SubResource("LabelSettings_7tprb")
+
+[node name="attackCooldown" type="Timer" parent="."]
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="attackCooldown" to="." method="_on_attack_cooldown_timeout"]

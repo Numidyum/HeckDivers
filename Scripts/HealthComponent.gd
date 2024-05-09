@@ -1,16 +1,8 @@
-extends CharacterBody2D
+extends Node
+class_name HealthComponent #class_name diğer scriptlerden erişebilir hale 
+#getiriyoruz
 
-@export var mspeed=70
-@onready var  player= get_tree().get_first_node_in_group("player")
-@onready var anim=$AnimatedSprite2D
-func _physics_process(delta):
-	move_and_slide()
-
-func _process(delta):
-	var direction=global_position.direction_to(player.global_position)
-	velocity=direction*mspeed
-	if velocity.x>0:
-		anim.play("idle")
+#signal'in kullanım amacı ekstra kendimiz bir signal üretmek için...
 signal died #ölmesi için 
 signal healthChanged #can değişikliği için (can azalması)
 signal healedPlayer #can artması için (can artması)
@@ -49,7 +41,3 @@ func checkDeath():
 func dealDamage(dmg):
 	healthComponent.damage(5)
 
-
-func _on_area_2d_body_entered(body):
-	if body.name=="player":
-		body.hurt()
