@@ -1,1 +1,16 @@
-res://Scenes/character_body_2d.tscn
+res://Scenes/world.tscn
+res://Scenes/Player.tscn
+res://Scenes/Merchant.tscn
+res://Scenes/enemy.tscn
+res://Scenes/enemyspawner.tscn
+res://Scripts/enemyspawner.gd
+res://Scripts/spawnInfo.gd
+res://Scripts/enemy.gd
+res://Scenes/weapon.tscn
+res://Scripts/HealthComponent.gd
+res://Scenes/health_component.tscn
+res://Scripts/Bullet.gd
+res://Scenes/Bullet.tscn
+res://Scripts/sample.gd
+res://Scenes/sample.tscn
+res://Scripts/dropComponent.gd
