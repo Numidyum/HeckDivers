@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dgjpya5v703hh"
+path="res://.godot/imported/BUGS Hazard 9+ Track 1.ogg-3ffee51a08f3135a22e377ab9d30cbda.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/BUGS Hazard 9+ Track 1.ogg"
+dest_files=["res://.godot/imported/BUGS Hazard 9+ Track 1.ogg-3ffee51a08f3135a22e377ab9d30cbda.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

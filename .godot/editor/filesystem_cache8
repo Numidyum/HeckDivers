@@ -1,43 +1,95 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715265677
-icon.svg::CompressedTexture2D::2131976541462335345::1715171734::1715171904::1::::<><>::
-::res://Fonts/::1715186901
-Insignia Regular.otf::FontFile::2930712675409793553::1715186900::1715186901::1::::<><>::
-::res://Scenes/::1715275599
-Bullet.tscn::PackedScene::8228757568590073196::1715246966::0::1::::<><>::res://Scripts/Bullet.gd<>uid://73xmjm5nr1wp::::res://Sprites/Bullet.png
-enemy.tscn::PackedScene::5751433834455365857::1715275598::0::1::::<><>::res://Scripts/enemy.gd<>uid://cue4fst2ohuuf::::res://Sprites/Bug.png
-enemyspawner.tscn::PackedScene::4723928992962617550::1715275598::0::1::::<><>::res://Scripts/enemyspawner.gd<>res://Scripts/spawnInfo.gd<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn
-hatacozum.tscn::PackedScene::6962536428932774898::1715244009::0::1::::<><>::res://Scenes/s.gd<>uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scenes/sd.gd<>res://Scripts/weapon.gd
-Merchant.tscn::PackedScene::8236147934194412885::1715275598::0::1::::<><>::uid://cjkqvlbokud3l::::res://Sprites/SUMY-Idle.png<>res://Scripts/playerDetector.gd<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
-Player.tscn::PackedScene::1149704052456346036::1715275598::0::1::::<><>::uid://836pwi2q5x5m::::res://Sprites/Character-AttackLeft.png<>uid://dn0vw6sebxhim::::res://Sprites/Character-Idle.png<>uid://doudfqljtmpr5::::res://Sprites/Character-Attack.png<>uid://c68gi8yelxwbl::::res://Scenes/weapon.tscn<>uid://dsjbhaxulgaip::::res://Sprites/Character-WalkLeft.png
-weapon.tscn::PackedScene::7017200344900248173::1715275599::0::1::::<><>::
-world.tscn::PackedScene::9042799137819890436::1715275598::0::1::::<><>::uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scripts/world.gd<>uid://d2j7habiugdr5::::res://Sprites/Idle.png<>uid://qm6ptggwhjbw::::res://Scenes/Player.tscn<>res://Scripts/minimapplayer.gd<>uid://dplwfhb2doho4::::res://Scenes/Merchant.tscn<>uid://dplr017l2hdd4::::res://Sprites/Shop.png<>uid://co3xn7l74oxq7::::res://Sprites/Liberator.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf<>uid://bftjniqj6lryg::::res://Sprites/Shop1.png<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn<>uid://16u5kin0v0mg::::res://Sprites/Sample.png<>uid://b8kkoj6ayjcq5::::res://Scenes/enemyspawner.tscn<>res://Scripts/spawnInfo.gd
-::res://Scripts/::1715270806
-Bullet.gd::GDScript::-1::1715244080::0::1::::<>Area2D<>::
-enemy.gd::GDScript::-1::1715270806::0::1::::<>CharacterBody2D<>::
-enemyspawner.gd::GDScript::-1::1715270784::0::1::::<>Node2D<>::
-Marker2D.gd::GDScript::-1::1715246207::0::1::::<>Marker2D<>::
-minimapplayer.gd::GDScript::-1::1715175249::0::1::::<>CharacterBody2D<>::
-player.gd::GDScript::-1::1715173450::0::1::::<>CharacterBody2D<>::
-playerDetector.gd::GDScript::-1::1715188321::0::1::::<>Area2D<>::
-spawnInfo.gd::GDScript::-1::1715270367::0::1::::spawnInfo<>Resource<>::
-weapon.gd::GDScript::-1::1715243849::0::1::::<>CollisionShape2D<>::
-world.gd::GDScript::-1::1715253940::0::1::::<>Node2D<>::
-::res://Sprites/::1715276235
-Bug.png::CompressedTexture2D::6186646448940191413::1715266735::1715266735::1::::<><>::
-Bullet.png::CompressedTexture2D::2305263986520135803::1715177269::1715177269::1::::<><>::
-Character-Attack.png::CompressedTexture2D::8183385354842025612::1715185875::1715185875::1::::<><>::
-Character-AttackLeft.png::CompressedTexture2D::2375944599974559284::1715186115::1715186116::1::::<><>::
-Character-Idle.png::CompressedTexture2D::8124642462753546368::1715178860::1715178861::1::::<><>::
-Character-Walk.png::CompressedTexture2D::6827860722266000258::1715187215::1715187216::1::::<><>::
-Character-WalkLeft.png::CompressedTexture2D::8441313890354670655::1715187215::1715187216::1::::<><>::
-dungeon.png::CompressedTexture2D::3901815486778564176::1715172023::1715172023::1::::<><>::
-hpTexture1.png::CompressedTexture2D::4428400881060496897::1715276235::1715276235::1::::<><>::
-hpTexture2.png::CompressedTexture2D::3402920311542569660::1715276235::1715276235::1::::<><>::
-Idle.png::CompressedTexture2D::9074895675353831068::1715171890::1715171890::1::::<><>::
-image.png::CompressedTexture2D::5232769438214318616::1715178763::1715178763::1::::<><>::
-Liberator.png::CompressedTexture2D::5814709160820039452::1715266735::1715266735::1::::<><>::
-Sample.png::CompressedTexture2D::1890174096854031578::1715266735::1715266735::1::::<><>::
-Shop1.png::CompressedTexture2D::2777158192820530402::1715266925::1715266925::1::::<><>::
-Shop.png::CompressedTexture2D::8235881110246093271::1715266925::1715266925::1::::<><>::
-SUMY-Idle.png::CompressedTexture2D::5426194291177263375::1715185399::1715185400::1::::<><>::
+::res://::1715285695
+icon.svg::CompressedTexture2D::2131976541462335345::1715280700::1715280910::1::::<><>::
+::res://Audio/::1715285867
+8CAA4A89E4952AF1.ogg::AudioStreamOggVorbis::3709470096943638710::1715285710::1715285710::1::::<><>::
+9CD0DAA8F5556D0A.ogg::AudioStreamOggVorbis::6165909329014156688::1715285867::1715285867::1::::<><>::
+8293CB17A9DCAFA2.ogg::AudioStreamOggVorbis::4188873353141108838::1715285683::1715285695::1::::<><>::
+Alien Scumbag (Male).wav::AudioStreamWAV::5353747418016017170::1715283164::1715283164::1::::<><>::
+BUGS Hazard 9+ Track 1.ogg::AudioStreamOggVorbis::7599928173981304269::1715283164::1715283326::1::::<><>::
+For Liberty (Male).wav::AudioStreamWAV::7824534839050922359::1715283164::1715283164::1::::<><>::
+For Super Earth (Male).wav::AudioStreamWAV::4453811126157036583::1715283164::1715283164::1::::<><>::
+GunSound.ogg::AudioStreamOggVorbis::550173797815495730::1715283164::1715283164::1::::<><>::
+Intro.mp3::AudioStreamMP3::6939883531786118608::1715284836::1715284865::1::::<><>::
+::res://Fonts/::1715280700
+Insignia Regular.otf::FontFile::2930712675409793553::1715280700::1715280700::1::::<><>::
+::res://Scenes/::1715285519
+AmmoBox.tscn::PackedScene::4229989307736851812::1715285519::0::1::::<><>::res://Scripts/AmmoBox.gd<>uid://cgkyij10lbnv2::::res://Sprites/AmmoPack.png
+Bullet.tscn::PackedScene::8228757568590073196::1715285519::0::1::::<><>::res://Scripts/Bullet.gd<>uid://73xmjm5nr1wp::::res://Sprites/Bullet.png
+drop_component.tscn::PackedScene::1755001670968596809::1715285519::0::1::::<><>::res://Scripts/dropComponent.gd<>uid://cbis7v0sns60e::::res://Scenes/sample.tscn
+enemy.tscn::PackedScene::5751433834455365857::1715285519::0::1::::<><>::res://Scripts/enemy.gd<>uid://bqe5hwecqnd0h::::res://Sprites/BugL.png<>uid://cue4fst2ohuuf::::res://Sprites/Bug.png<>uid://bji26ten5jipv::::res://Scenes/health_component.tscn<>uid://0aeveaggrqvx::::res://Scenes/drop_component.tscn
+enemyspawner.tscn::PackedScene::4723928992962617550::1715285519::0::1::::<><>::res://Scripts/enemyspawner.gd<>res://Scripts/spawnInfo.gd<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn
+gfythytjhrethj.gd::GDScript::-1::1715282546::0::1::::<>AnimatedSprite2D<>::
+hatacozum.tscn::PackedScene::6962536428932774898::1715280700::0::1::::<><>::res://Scenes/s.gd<>uid://bvucliv2yoykm::::res://Sprites/dungeon.png<>res://Scenes/sd.gd<>res://Scripts/weapon.gd
+health_component.tscn::PackedScene::3036331021637601531::1715280700::0::1::::<><>::res://Scripts/HealthComponent.gd
+Mainmenu.gd::GDScript::-1::1715284798::0::1::::<>Node2D<>::
+Mainmenu.tscn::PackedScene::8251155824948048003::1715285519::0::1::::<><>::res://Scenes/Mainmenu.gd<>uid://daibwqoyxfdc3::::res://Sprites/14D7395E9C0478CB.png<>uid://cranvt70rdagu::::res://Sprites/buttonb2.png<>uid://cw5kk0ukru0is::::res://Sprites/buttonb1.png<>uid://dg6mx4m2ungrw::::res://Sprites/YdbjS0f.png<>uid://c54y4rhsj3wls::::res://Audio/Intro.mp3<>uid://cjybt3425edg1::::res://Sprites/Helldiver 4.png<>uid://x5pk0wok713x::::res://Sprites/Warrior.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
+Merc22hant.gd::GDScript::-1::1715282304::0::1::::<>AnimatedSprite2D<>::
+Merchant2.tscn::PackedScene::732577924082984406::1715280200::0::1::::<><>::uid://cjkqvlbokud3l::::res://Sprites/SUMY-Idle.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf<>res://Scripts/Merchant2.gd
+Merchant.gd::GDScript::-1::1715282182::0::1::::<>AnimatedSprite2D<>::
+Merchant.tscn::PackedScene::8236147934194412885::1715285519::0::1::::<><>::uid://cjkqvlbokud3l::::res://Sprites/SUMY-Idle.png<>res://Scripts/playerDetector.gd<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
+Player.tscn::PackedScene::1149704052456346036::1715285519::0::1::::<><>::uid://836pwi2q5x5m::::res://Sprites/Character-AttackLeft.png<>uid://dn0vw6sebxhim::::res://Sprites/Character-Idle.png<>uid://doudfqljtmpr5::::res://Sprites/Character-Attack.png<>uid://c68gi8yelxwbl::::res://Scenes/weapon.tscn<>uid://c4jp4sa2vlx6a::::res://Sprites/Character-Walk.png<>uid://dsjbhaxulgaip::::res://Sprites/Character-WalkLeft.png<>uid://boqnuoaqktprg::::res://Sprites/hpTexture2.png<>uid://b4dfd6se8oewf::::res://Sprites/hpTexture1.png<>uid://16u5kin0v0mg::::res://Sprites/Sample.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf
+sample.tscn::PackedScene::4860696426777883314::1715285519::0::1::::<><>::res://Scripts/sample.gd<>uid://16u5kin0v0mg::::res://Sprites/Sample.png
+TileMap2.gd::GDScript::-1::1715282147::0::1::::<>TileMap<>::
+weapon.tscn::PackedScene::7017200344900248173::1715285519::0::1::::<><>::uid://h3rjucoprao5::::res://Audio/GunSound.ogg<>uid://djqi7fewqjadj::::res://Audio/For Liberty (Male).wav<>uid://cijno5cuov0xy::::res://Audio/Alien Scumbag (Male).wav<>uid://b4ppvbban2kih::::res://Audio/For Super Earth (Male).wav
+world.tscn::PackedScene::9042799137819890436::1715285519::0::1::::<><>::res://Scripts/world.gd<>res://Scripts/Camera2D.gd<>uid://qp7p2tmmh5pq::::res://Sprites/cIdle.png<>uid://qm6ptggwhjbw::::res://Scenes/Player.tscn<>res://Scripts/minimapplayer.gd<>uid://dplwfhb2doho4::::res://Scenes/Merchant.tscn<>uid://dplr017l2hdd4::::res://Sprites/Shop.png<>uid://co3xn7l74oxq7::::res://Sprites/Liberator.png<>uid://bh0wn6qgr73cn::::res://Fonts/Insignia Regular.otf<>uid://bftjniqj6lryg::::res://Sprites/Shop1.png<>uid://cn7bjl376exk8::::res://Scenes/enemy.tscn<>uid://16u5kin0v0mg::::res://Sprites/Sample.png<>res://Scenes/TileMap2.gd<>res://Scenes/Merchant.gd<>res://Scenes/gfythytjhrethj.gd<>uid://b8kkoj6ayjcq5::::res://Scenes/enemyspawner.tscn<>uid://cx6q6p0nprmwl::::res://Sprites/Ground1.png<>res://Scripts/spawnInfo.gd<>uid://botxibmjauio3::::res://Sprites/Ground.png<>uid://cgeao3q54ftth::::res://Sprites/rocks.png<>uid://ygywq7r10h5e::::res://Sprites/Wines.png<>uid://d2sxtf1cltcai::::res://Sprites/Bush.png<>uid://j76nd2i2woft::::res://Sprites/Ammo.png<>uid://dgjpya5v703hh::::res://Audio/BUGS Hazard 9+ Track 1.ogg<>uid://b1jbknuw266pc::::res://Scenes/AmmoBox.tscn
+::res://Scripts/::1715284672
+AmmoBox.gd::GDScript::-1::1715277785::0::1::::<>Area2D<>::
+Bullet.gd::GDScript::-1::1715280700::0::1::::<>Area2D<>::
+Camera2D.gd::GDScript::-1::1715281872::0::1::::MapCamera2D<>Camera2D<>::
+dropComponent.gd::GDScript::-1::1715280700::0::1::::<>Node<>::
+enemy.gd::GDScript::-1::1715282969::0::1::::<>CharacterBody2D<>::
+enemyspawner.gd::GDScript::-1::1715280700::0::1::::<>Node2D<>::
+Global.gd::GDScript::-1::1715284672::0::1::::<>Node<>::
+HealthComponent.gd::GDScript::-1::1715280700::0::1::::HealthComponent<>Node<>::
+Marker2D.gd::GDScript::-1::1715280700::0::1::::<>Marker2D<>::
+Merchant2.gd::GDScript::-1::1715278155::0::1::::<>Area2D<>::
+minimapplayer.gd::GDScript::-1::1715281899::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1715280700::0::1::::<>CharacterBody2D<>::
+playerDetector.gd::GDScript::-1::1715280700::0::1::::<>Area2D<>::
+sample.gd::GDScript::-1::1715284249::0::1::::<>Area2D<>::
+spawnInfo.gd::GDScript::-1::1715280700::0::1::::spawnInfo<>Resource<>::
+weapon.gd::GDScript::-1::1715280700::0::1::::<>CollisionShape2D<>::
+world.gd::GDScript::-1::1715284023::0::1::::<>Node2D<>::
+::res://Sprites/::1715285690
+14D7395E9C0478CB.png::CompressedTexture2D::7175877940692705668::1715285346::1715285347::1::::<><>::
+Ammo.png::CompressedTexture2D::699665322648943509::1715281023::1715281023::1::::<><>::
+AmmoPack.png::CompressedTexture2D::5216090214958334961::1715281023::1715281023::1::::<><>::
+Bug.png::CompressedTexture2D::6186646448940191413::1715281071::1715281072::1::::<><>::
+BugL.png::CompressedTexture2D::3519534865063874829::1715281095::1715281095::1::::<><>::
+Bullet.png::CompressedTexture2D::2305263986520135803::1715280700::1715280700::1::::<><>::
+Bush.png::CompressedTexture2D::9092950352685060376::1715281670::1715281013::1::::<><>::
+buttonb1.png::CompressedTexture2D::6379553632369150582::1715285244::1715285244::1::::<><>::
+buttonb2.png::CompressedTexture2D::5966879580346834984::1715285244::1715285244::1::::<><>::
+buttons1.png::CompressedTexture2D::3519033277806953960::1715284750::1715284750::1::::<><>::
+buttons2.png::CompressedTexture2D::8585666666669835732::1715284750::1715284750::1::::<><>::
+buttons3.png::CompressedTexture2D::5586216147396505235::1715284750::1715284750::1::::<><>::
+buttons4.png::CompressedTexture2D::3348431937994604393::1715284750::1715284750::1::::<><>::
+Character-Attack.png::CompressedTexture2D::8183385354842025612::1715280700::1715280700::1::::<><>::
+Character-AttackLeft.png::CompressedTexture2D::2375944599974559284::1715281047::1715281048::1::::<><>::
+Character-AttackRight.png::CompressedTexture2D::8708618601458352037::1715281047::1715281048::1::::<><>::
+Character-HUD.jpg::CompressedTexture2D::5554525987705162171::1715281057::1715281057::1::::<><>::
+Character-Idle.png::CompressedTexture2D::8124642462753546368::1715281047::1715281048::1::::<><>::
+Character-Walk.png::CompressedTexture2D::6827860722266000258::1715281047::1715281048::1::::<><>::
+Character-WalkLeft.png::CompressedTexture2D::8441313890354670655::1715281047::1715281048::1::::<><>::
+cIdle.png::CompressedTexture2D::1155958343239824318::1715280700::1715280700::1::::<><>::
+CWalk.png::CompressedTexture2D::2714004790498971517::1715280700::1715280700::1::::<><>::
+CWalkLeft.png::CompressedTexture2D::5276627953398461055::1715280700::1715280700::1::::<><>::
+dungeon.png::CompressedTexture2D::3901815486778564176::1715280700::1715280700::1::::<><>::
+F7E4B1C43FEF89FD.png::CompressedTexture2D::5656019200724370467::1715285117::1715285118::1::::<><>::
+Ground1.png::CompressedTexture2D::6452208140013866111::1715281012::1715281013::1::::<><>::
+Ground.png::CompressedTexture2D::3409698520608275800::1715281012::1715281013::1::::<><>::
+Helldiver 4.png::CompressedTexture2D::5454182190023027218::1715284988::1715284989::1::::<><>::
+hpTexture1.png::CompressedTexture2D::4428400881060496897::1715280700::1715280700::1::::<><>::
+hpTexture2.png::CompressedTexture2D::3402920311542569660::1715280700::1715280700::1::::<><>::
+image.png::CompressedTexture2D::5232769438214318616::1715280700::1715280700::1::::<><>::
+Liberator.png::CompressedTexture2D::5814709160820039452::1715280700::1715280700::1::::<><>::
+Mud.png::CompressedTexture2D::7481552029610278015::1715281012::1715281013::1::::<><>::
+rocks.png::CompressedTexture2D::5202258438118014353::1715281012::1715281013::1::::<><>::
+Sample.png::CompressedTexture2D::1890174096854031578::1715280700::1715280700::1::::<><>::
+Shop1.png::CompressedTexture2D::2777158192820530402::1715280700::1715280700::1::::<><>::
+Shop.png::CompressedTexture2D::8235881110246093271::1715280700::1715280700::1::::<><>::
+SUMY-Idle.png::CompressedTexture2D::5426194291177263375::1715280700::1715280700::1::::<><>::
+Warrior.png::CompressedTexture2D::1677204696847282839::1715285024::1715285024::1::::<><>::
+Wines.png::CompressedTexture2D::1698415899744920996::1715281012::1715281013::1::::<><>::
+YdbjS0f.png::CompressedTexture2D::7645162043425169528::1715285301::1715285302::1::::<><>::

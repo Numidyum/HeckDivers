@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djqi7fewqjadj"
+path="res://.godot/imported/For Liberty (Male).wav-ae82c7ec75afb3c62e6b09e04ca6b3bc.sample"
+
+[deps]
+
+source_file="res://Audio/For Liberty (Male).wav"
+dest_files=["res://.godot/imported/For Liberty (Male).wav-ae82c7ec75afb3c62e6b09e04ca6b3bc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,14 +1,18 @@
-[gd_scene load_steps=39 format=3 uid="uid://qm6ptggwhjbw"]
+[gd_scene load_steps=46 format=3 uid="uid://qm6ptggwhjbw"]
 
 [ext_resource type="Texture2D" uid="uid://836pwi2q5x5m" path="res://Sprites/Character-AttackLeft.png" id="1_edoyv"]
 [ext_resource type="Texture2D" uid="uid://dn0vw6sebxhim" path="res://Sprites/Character-Idle.png" id="1_psf8l"]
 [ext_resource type="Texture2D" uid="uid://doudfqljtmpr5" path="res://Sprites/Character-Attack.png" id="2_4ou4o"]
 [ext_resource type="PackedScene" uid="uid://c68gi8yelxwbl" path="res://Scenes/weapon.tscn" id="5_2uc4w"]
+[ext_resource type="Texture2D" uid="uid://c4jp4sa2vlx6a" path="res://Sprites/Character-Walk.png" id="5_nwyu5"]
 [ext_resource type="Texture2D" uid="uid://dsjbhaxulgaip" path="res://Sprites/Character-WalkLeft.png" id="6_xq5a2"]
 [ext_resource type="Texture2D" uid="uid://boqnuoaqktprg" path="res://Sprites/hpTexture2.png" id="6_yh732"]
 [ext_resource type="Texture2D" uid="uid://b4dfd6se8oewf" path="res://Sprites/hpTexture1.png" id="7_16jo6"]
 [ext_resource type="Texture2D" uid="uid://16u5kin0v0mg" path="res://Sprites/Sample.png" id="8_skha3"]
 [ext_resource type="FontFile" uid="uid://bh0wn6qgr73cn" path="res://Fonts/Insignia Regular.otf" id="9_3mu0j"]
+[ext_resource type="AudioStream" uid="uid://bs35ovx2fij4i" path="res://Audio/8CAA4A89E4952AF1.ogg" id="11_yeyhf"]
+[ext_resource type="AudioStream" uid="uid://ct32vjomygtem" path="res://Audio/9CD0DAA8F5556D0A.ogg" id="12_6k1s5"]
+[ext_resource type="AudioStream" uid="uid://b0xeeq0akbtqs" path="res://Audio/8293CB17A9DCAFA2.ogg" id="13_2lat3"]
 
 [sub_resource type="GDScript" id="GDScript_q7yci"]
 script/source = "extends CharacterBody2D
@@ -23,7 +27,7 @@ var health = 100
  #can tanımladım
 var playerAlive = true #player canlı mı?
 func movement():
-	var moveDir = Input.get_vector(\"ui_left\",\"ui_right\",\"ui_up\",\"ui_down\")
+	var moveDir = Input.get_vector(\"A\",\"D\",\"W\",\"S\")
 	velocity = moveDir * speed
 
 func playerAnim():
@@ -41,16 +45,25 @@ func _physics_process(delta):
 	playerAnim()
 	movement()
 	move_and_slide()
+	$CanvasLayer/globalsample.text = str(Global.Sample)
 	if health <= 0:
 		playerAlive = false
 		health = 0
 		self.queue_free()
+		
+func AmmoPicked():
+	if Global.Ammo >= 50:
+		return false
+	else:
+		Global.Ammo += 50
+		return true
 
 func player():
 	pass
 
 func hurt():
 	$CanvasLayer/hpbar.value-=0.5
+	$AudioStreamPlayer2D.play()
 	if $CanvasLayer/hpbar.value==0:
 		get_tree().reload_current_scene()
 
@@ -125,45 +138,53 @@ region = Rect2(4272, 0, 534, 577)
 atlas = ExtResource("1_psf8l")
 region = Rect2(4806, 0, 534, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_32cq7"]
-atlas = ExtResource("6_xq5a2")
-region = Rect2(6975, 0, 775, 577)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dfg5p"]
-atlas = ExtResource("6_xq5a2")
-region = Rect2(6200, 0, 775, 577)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mnt8q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_a81qs"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(5425, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vhfrd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ujp2"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(4650, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l4dm0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k57sx"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(3875, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gweqh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0ilw"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(3100, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aailu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnp2t"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(2325, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x7uh0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fiwdl"]
 atlas = ExtResource("6_xq5a2")
 region = Rect2(1550, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ct32w"]
-atlas = ExtResource("6_xq5a2")
-region = Rect2(775, 0, 775, 577)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuxhm"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(1550, 0, 775, 577)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwm4w"]
-atlas = ExtResource("6_xq5a2")
-region = Rect2(0, 0, 775, 577)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyryh"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(2325, 0, 775, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnsig"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(3100, 0, 775, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gos43"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(3875, 0, 775, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35iqp"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(4650, 0, 775, 577)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxmm4"]
+atlas = ExtResource("5_nwyu5")
+region = Rect2(5425, 0, 775, 577)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kbjc8"]
 animations = [{
@@ -226,40 +247,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_32cq7")
+"texture": SubResource("AtlasTexture_a81qs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dfg5p")
+"texture": SubResource("AtlasTexture_1ujp2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mnt8q")
+"texture": SubResource("AtlasTexture_k57sx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vhfrd")
+"texture": SubResource("AtlasTexture_n0ilw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l4dm0")
+"texture": SubResource("AtlasTexture_mnp2t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gweqh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aailu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x7uh0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ct32w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dwm4w")
+"texture": SubResource("AtlasTexture_fiwdl")
 }],
 "loop": true,
 "name": &"walkleft",
 "speed": 10.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuxhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyryh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnsig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gos43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35iqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxmm4")
+}],
 "loop": true,
 "name": &"walkright",
 "speed": 5.0
@@ -274,6 +301,15 @@ size = Vector2(40, 64)
 [sub_resource type="LabelSettings" id="LabelSettings_7tprb"]
 font = ExtResource("9_3mu0j")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dkpnd"]
+streams_count = 3
+stream_0/stream = ExtResource("11_yeyhf")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("12_6k1s5")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("13_2lat3")
+stream_2/weight = 1.0
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-24, -32)
 motion_mode = 1
@@ -281,12 +317,12 @@ script = SubResource("GDScript_q7yci")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 8)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.10197, 0.110919)
 sprite_frames = SubResource("SpriteFrames_kbjc8")
-animation = &"idle"
+animation = &"charAttackRight"
 autoplay = "idle"
 
 [node name="hitbox" type="Area2D" parent="."]
@@ -301,6 +337,12 @@ shape = SubResource("RectangleShape2D_0v6ur")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_top = 608.0
+offset_right = 144.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 1)
+
 [node name="background" type="ColorRect" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
 offset_top = 600.0
@@ -309,8 +351,8 @@ offset_bottom = 648.0
 
 [node name="hpbar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 95.0
-offset_top = 615.0
-offset_right = 151.0
+offset_top = 616.0
+offset_right = 149.0
 offset_bottom = 639.0
 max_value = 3.0
 step = 0.5
@@ -331,6 +373,9 @@ text = "X0"
 label_settings = SubResource("LabelSettings_7tprb")
 
 [node name="attackCooldown" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_dkpnd")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="hitbox" to="." method="_on_hitbox_body_exited"]

@@ -10,7 +10,9 @@ func _process(delta):
 	var direction=global_position.direction_to(player.global_position)
 	velocity=direction*mspeed
 	if velocity.x>0:
-		anim.play("idle")
+		anim.play("right")
+	if velocity.x<0:
+		anim.play("left")
 signal died #ölmesi için 
 signal healthChanged #can değişikliği için (can azalması)
 signal healedPlayer #can artması için (can artması)
@@ -47,7 +49,10 @@ func checkDeath():
 		owner.queue_free()
 
 func dealDamage(dmg):
-	healthComponent.damage(5)
+	if Global.WeaponUpgrade == true:
+		healthComponent.damage(10)
+	else:
+		healthComponent.damage(5)
 
 
 func _on_area_2d_body_entered(body):
