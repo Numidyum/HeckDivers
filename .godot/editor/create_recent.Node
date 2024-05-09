@@ -1,3 +1,14 @@
 Sprite2D
+Timer
 CollisionShape2D
+Area2D
+AnimatedSprite2D
 CharacterBody2D
+Label
+Button
+Panel
+CanvasLayer
+Marker2D
+Camera2D
+AnimationPlayer
+Node2D

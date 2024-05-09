@@ -1,3 +1,151 @@
-[gd_scene format=3 uid="uid://d13nt0hdkv5iu"]
+[gd_scene load_steps=16 format=3 uid="uid://d13nt0hdkv5iu"]
+
+[ext_resource type="Texture2D" uid="uid://bvucliv2yoykm" path="res://Sprites/dungeon.png" id="1_i88fx"]
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_sl2sx"]
+[ext_resource type="Texture2D" uid="uid://d2j7habiugdr5" path="res://Sprites/Idle.png" id="3_dtykq"]
+[ext_resource type="PackedScene" uid="uid://qm6ptggwhjbw" path="res://Scenes/Player.tscn" id="4_q1opb"]
+[ext_resource type="Script" path="res://Scripts/minimapplayer.gd" id="4_sm5bb"]
+[ext_resource type="PackedScene" uid="uid://dplwfhb2doho4" path="res://Scenes/Merchant.tscn" id="5_vo7xe"]
+[ext_resource type="Texture2D" uid="uid://dplr017l2hdd4" path="res://Sprites/Shop.png" id="7_4ayen"]
+[ext_resource type="Texture2D" uid="uid://co3xn7l74oxq7" path="res://Sprites/Liberator.png" id="7_v78o6"]
+[ext_resource type="FontFile" uid="uid://bh0wn6qgr73cn" path="res://Fonts/Insignia Regular.otf" id="8_3sx77"]
+[ext_resource type="Texture2D" uid="uid://bftjniqj6lryg" path="res://Sprites/Shop1.png" id="8_x42ug"]
+[ext_resource type="PackedScene" uid="uid://cn7bjl376exk8" path="res://Scenes/enemy.tscn" id="9_admf8"]
+[ext_resource type="Texture2D" uid="uid://16u5kin0v0mg" path="res://Sprites/Sample.png" id="9_bhm4y"]
+
+[sub_resource type="GDScript" id="GDScript_mi4pb"]
+script/source = "extends SubViewport
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_tln3g"]
+font = ExtResource("8_3sx77")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_qceo5"]
+font = ExtResource("8_3sx77")
 
 [node name="World" type="Node2D"]
+position = Vector2(-336, 64)
+script = ExtResource("1_sl2sx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 300)
+anchors_preset = -1
+anchor_right = 0.00347222
+anchor_bottom = 0.00617284
+offset_left = 960.0
+offset_top = -56.0
+offset_right = 1460.0
+offset_bottom = 444.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(250, 200)
+render_target_update_mode = 4
+script = SubResource("GDScript_mi4pb")
+
+[node name="minimap" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+texture = ExtResource("1_i88fx")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.5, 0.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+position = Vector2(80, 48)
+script = ExtResource("4_sm5bb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport/CharacterBody2D"]
+texture = ExtResource("3_dtykq")
+
+[node name="map" type="Sprite2D" parent="."]
+position = Vector2(63, 22)
+texture = ExtResource("1_i88fx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="map"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="map/StaticBody2D"]
+polygon = PackedVector2Array(-96, 56, -120, 80, -120, -80, -96, -56)
+
+[node name="player" parent="." groups=["player"] instance=ExtResource("4_q1opb")]
+position = Vector2(144, 48)
+
+[node name="Merchant" parent="." instance=ExtResource("5_vo7xe")]
+position = Vector2(7.99997, -32)
+
+[node name="ShopPopup" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = -0.028
+anchor_top = -0.049
+anchor_right = -0.028
+anchor_bottom = -0.049
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 160.0
+offset_bottom = 80.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopPopup"]
+position = Vector2(96, 52)
+scale = Vector2(4, 2.375)
+texture = ExtResource("7_4ayen")
+
+[node name="GunShop" type="Panel" parent="ShopPopup"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0416667
+anchor_bottom = 0.142857
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 72.0
+offset_bottom = 96.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="ShopPopup/GunShop"]
+position = Vector2(28, 36)
+scale = Vector2(0.5625, 0.234375)
+texture = ExtResource("8_x42ug")
+
+[node name="buyButton" type="Button" parent="ShopPopup/GunShop"]
+modulate = Color(1, 1, 1, 0.545098)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 48.0
+offset_bottom = 95.0
+text = "buy"
+
+[node name="Sprite2D" type="Sprite2D" parent="ShopPopup/GunShop"]
+position = Vector2(32, 32)
+scale = Vector2(0.3125, 0.4375)
+texture = ExtResource("7_v78o6")
+
+[node name="GunInfo" type="Label" parent="ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -8.0
+offset_right = 136.0
+offset_bottom = 15.0
+text = "Gun Info"
+label_settings = SubResource("LabelSettings_tln3g")
+
+[node name="Label2" type="Label" parent="ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 24.0
+offset_right = 159.0
+offset_bottom = 47.0
+text = "10X Sample"
+label_settings = SubResource("LabelSettings_qceo5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ShopPopup/GunShop"]
+position = Vector2(80, 32)
+scale = Vector2(0.800001, 0.8)
+texture = ExtResource("9_bhm4y")
+
+[node name="enemy" parent="." instance=ExtResource("9_admf8")]
+position = Vector2(336, 24)
+
+[connection signal="pressed" from="ShopPopup/GunShop/buyButton" to="." method="_on_buy_button_pressed"]

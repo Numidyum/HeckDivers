@@ -1,1 +1,5 @@
-res://Scenes/character_body_2d.tscn
+res://Scenes/world.tscn
+res://Scenes/Player.tscn
+res://Scenes/Merchant.tscn
+res://Scenes/enemy.tscn
+res://Scenes/enemyspawner.tscn
