@@ -10,10 +10,15 @@ signal healedPlayer #can artması için (can artması)
 @export var maxHealth: float = 10 #maksimum can değeri
 @export var healed: float = 10 #maksimum canlanma yani +hp değeri
 var currentHealth #anlık can değeri
+@onready var DeathNoise = $"../Death noise"
+@onready var AmbientNoise = $"../Ambient noise"
+@export_range(0,1) var AmbientChance: float = .1
 
 func _ready():
 	currentHealth = maxHealth #en başta anlık can değerim maksimum can değerime
 	#eşit
+	if randf() < AmbientChance:
+		AmbientNoise.play()
 
 func damage(damageAmount: float):
 	currentHealth = max(currentHealth - damageAmount, 0) #maksimum değerin üstüne
@@ -33,6 +38,7 @@ func health(healthAmount: float):
 func checkDeath():
 	var enemy = is_in_group("enemy")
 	if currentHealth <= 0:
+		Global.EnemyKillCount += 1
 		died.emit()
 		if owner.is_in_group("enemy"):
 			owner.queue_free()
@@ -40,4 +46,5 @@ func checkDeath():
 
 func dealDamage(dmg):
 	healthComponent.damage(5)
+
 

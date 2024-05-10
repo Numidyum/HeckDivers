@@ -12,6 +12,8 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "player":
 		var indicatorLabel = get_parent().get_node("Label")
+		$"../../ShopPopup2".visible = false
+		$"../../ShopPopup".visible = false
 		var indicatorLabelAnim = get_parent().get_node("Label/AnimationPlayer")
 		indicatorLabelAnim.play("lost")
 		

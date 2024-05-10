@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c5v3lci32eso"
+path="res://.godot/imported/Warrior Death (3).ogg-17c58011c42c8121bdb1e34af5679c20.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Warrior Death (3).ogg"
+dest_files=["res://.godot/imported/Warrior Death (3).ogg-17c58011c42c8121bdb1e34af5679c20.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

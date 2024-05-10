@@ -12,8 +12,8 @@ func onDied():
 	if not owner is Node2D:
 		return
 	if randf() > dropPercent:
+		$"../Death noise".play()
 		return
-		
 	var spawnPosition = (owner as Node2D).global_position
 	var goldInstance = goldScene.instantiate() as Node2D
 	var entitiesLayer = get_tree().get_first_node_in_group("EntitiesLayer")

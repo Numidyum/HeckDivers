@@ -13,7 +13,8 @@ config_version=5
 config/name="HeckDivers"
 run/main_scene="res://Scenes/Mainmenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/image="res://HD2_Skull_Hires.png"
+config/icon="res://HD2_Skull_Hires1.png"
 
 [autoload]
 

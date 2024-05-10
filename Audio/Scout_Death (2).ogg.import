@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc1seqd1rhsbk"
+path="res://.godot/imported/Scout_Death (2).ogg-642b4379490b7fda1813486e940db9e5.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Scout_Death (2).ogg"
+dest_files=["res://.godot/imported/Scout_Death (2).ogg-642b4379490b7fda1813486e940db9e5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
