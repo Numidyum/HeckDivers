@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://0aeveaggrqvx"]
-
-[ext_resource type="Script" path="res://Scripts/dropComponent.gd" id="1_iq3vy"]
-[ext_resource type="PackedScene" uid="uid://cbis7v0sns60e" path="res://Scenes/sample.tscn" id="2_obch8"]
-
-[node name="dropComponent" type="Node"]
-script = ExtResource("1_iq3vy")
-goldScene = ExtResource("2_obch8")

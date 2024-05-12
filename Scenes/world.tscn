@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://d13nt0hdkv5iu"]
+[gd_scene load_steps=55 format=3 uid="uid://d13nt0hdkv5iu"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_sl2sx"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_3g8dq"]
@@ -14,21 +14,28 @@
 [ext_resource type="Script" path="res://Scenes/TileMap2.gd" id="10_l15e8"]
 [ext_resource type="Texture2D" uid="uid://61lpvt8653hp" path="res://Sprites/Green.png" id="11_7etne"]
 [ext_resource type="Script" path="res://Scenes/Merchant.gd" id="12_2laxx"]
-[ext_resource type="Script" path="res://Scenes/gfythytjhrethj.gd" id="13_3imvp"]
 [ext_resource type="PackedScene" uid="uid://b8kkoj6ayjcq5" path="res://Scenes/enemyspawner.tscn" id="13_of0h2"]
 [ext_resource type="Texture2D" uid="uid://cx6q6p0nprmwl" path="res://Sprites/Ground1.png" id="14_2el77"]
 [ext_resource type="Script" path="res://Scripts/spawnInfo.gd" id="14_8loo2"]
 [ext_resource type="Texture2D" uid="uid://botxibmjauio3" path="res://Sprites/Ground.png" id="15_pnoww"]
 [ext_resource type="Texture2D" uid="uid://cgeao3q54ftth" path="res://Sprites/rocks.png" id="16_0nxb3"]
-[ext_resource type="Texture2D" uid="uid://twnye8edbgq" path="res://Sprites/Character/6225D1C324D96F20.png" id="16_hh1sk"]
 [ext_resource type="Texture2D" uid="uid://ygywq7r10h5e" path="res://Sprites/Wines.png" id="17_i15ld"]
 [ext_resource type="Script" path="res://Scenes/asfdfg.gd" id="17_swfic"]
 [ext_resource type="Texture2D" uid="uid://d2sxtf1cltcai" path="res://Sprites/Bush.png" id="18_ccs14"]
-[ext_resource type="Script" path="res://Scenes/Label2.gd" id="18_qjyy0"]
 [ext_resource type="Texture2D" uid="uid://j76nd2i2woft" path="res://Sprites/Ammo.png" id="19_6n4bt"]
 [ext_resource type="Script" path="res://Scripts/playerDetector.gd" id="20_svnra"]
 [ext_resource type="AudioStream" uid="uid://dgjpya5v703hh" path="res://Audio/BUGS Hazard 9+ Track 1.ogg" id="24_6aj7a"]
 [ext_resource type="PackedScene" uid="uid://b1jbknuw266pc" path="res://Scenes/AmmoBox.tscn" id="24_k0ivg"]
+[ext_resource type="Texture2D" uid="uid://pb5f1ln7wr8i" path="res://Sprites/Shop/adsfsadfdfd.png" id="27_3vkue"]
+[ext_resource type="Texture2D" uid="uid://cy8dnwu03g3pi" path="res://Sprites/Shop/B36E94AB2FE531B1.png" id="28_acdsr"]
+[ext_resource type="Texture2D" uid="uid://bu57kl71wcrq3" path="res://Sprites/Shop/NBuy.png" id="29_tcakq"]
+[ext_resource type="Texture2D" uid="uid://diay140n3vekd" path="res://Sprites/Shop/Bought.png" id="30_phiuc"]
+[ext_resource type="Texture2D" uid="uid://cu5wcbkqxt1qa" path="res://Sprites/Shop/asdfghdsafgmhhgfddfghjjhgfdsfghk.png" id="30_sx5uq"]
+[ext_resource type="Texture2D" uid="uid://bbdyw2sy1glw" path="res://Sprites/Shop/ShopGun.png" id="31_hdvwd"]
+[ext_resource type="Texture2D" uid="uid://bo7rlcmkstp0h" path="res://Sprites/Shop/ShopSelect.png" id="32_cdt78"]
+[ext_resource type="Texture2D" uid="uid://bctnw2b8y5s2u" path="res://Sprites/Shop/9F99652CAB701FD3.png" id="33_7b3gn"]
+[ext_resource type="Texture2D" uid="uid://lpn3fiqw1lew" path="res://Sprites/Shop/Emptyyyy.png" id="34_85fpn"]
+[ext_resource type="Texture2D" uid="uid://ddv7y1i0jgfdj" path="res://Sprites/Shop/Emptyful.png" id="35_f4nar"]
 
 [sub_resource type="GDScript" id="GDScript_mi4pb"]
 script/source = "extends SubViewport
@@ -3156,13 +3163,6 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_551l0"]
 size = Vector2(297.016, 215.145)
 
-[sub_resource type="LabelSettings" id="LabelSettings_tln3g"]
-font = ExtResource("8_3sx77")
-font_size = 12
-
-[sub_resource type="LabelSettings" id="LabelSettings_qceo5"]
-font = ExtResource("8_3sx77")
-
 [sub_resource type="Resource" id="Resource_ftf63"]
 script = ExtResource("14_8loo2")
 timeStart = 0
@@ -3171,8 +3171,55 @@ enemy = ExtResource("9_admf8")
 enemyNum = 1
 enemySpawnDelay = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jqw2"]
-size = Vector2(297.016, 215.145)
+[sub_resource type="LabelSettings" id="LabelSettings_tln3g"]
+font = ExtResource("8_3sx77")
+font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qceo5"]
+font = ExtResource("8_3sx77")
+font_size = 30
+font_color = Color(0.805802, 0.804861, 1.92523e-06, 1)
+outline_size = 5
+outline_color = Color(0.372684, 0.372217, 1.92523e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_umbib"]
+font = ExtResource("8_3sx77")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmyva"]
+font = ExtResource("8_3sx77")
+font_size = 25
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(1, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qs12b"]
+font = ExtResource("8_3sx77")
+font_size = 15
+font_color = Color(0.687215, 0.687215, 0.687215, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k8fft"]
+font = ExtResource("8_3sx77")
+font_size = 32
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.952941)
+shadow_offset = Vector2(1, 3)
 
 [node name="World" type="Node2D"]
 position = Vector2(-520, 272)
@@ -3242,11 +3289,6 @@ hframes = 7
 position = Vector2(-512, 240)
 script = ExtResource("12_2laxx")
 
-[node name="Merchant3" parent="CanvasLayer/SubViewportContainer/SubViewport" instance=ExtResource("5_vo7xe")]
-position = Vector2(-520, 240)
-flip_h = true
-script = ExtResource("13_3imvp")
-
 [node name="Label" type="Label" parent="CanvasLayer/SubViewportContainer/SubViewport"]
 offset_left = -700.0
 offset_top = -431.0
@@ -3255,15 +3297,6 @@ offset_bottom = -379.0
 text = "GUN MERCHANT"
 label_settings = SubResource("LabelSettings_k3o40")
 script = ExtResource("17_swfic")
-
-[node name="Label2" type="Label" parent="CanvasLayer/SubViewportContainer/SubViewport"]
-offset_left = 1233.0
-offset_top = -455.0
-offset_right = 1606.0
-offset_bottom = -403.0
-text = "AMMO MERCHANT"
-label_settings = SubResource("LabelSettings_k3o40")
-script = ExtResource("18_qjyy0")
 
 [node name="Merchant" parent="." instance=ExtResource("5_vo7xe")]
 position = Vector2(-501.156, -317)
@@ -3306,108 +3339,36 @@ polygon = PackedVector2Array(-48380, -43920, 55630, -43280, 53710, -47980, -4860
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/Area2D/CollisionPolygon2D2/CollisionPolygon2D"]
 polygon = PackedVector2Array(-45820, -50540, -46460, 49410, -43040, 49410, -43260, -52040)
 
-[node name="ShopPopup" type="Panel" parent="."]
-visible = false
-anchors_preset = -1
-anchor_left = -0.028
-anchor_top = -0.049
-anchor_right = -0.028
-anchor_bottom = -0.049
-offset_left = -454.156
-offset_top = -367.0
-offset_right = -262.156
-offset_bottom = -255.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="ShopPopup"]
-position = Vector2(36.156, 31.5)
-scale = Vector2(0.326172, 0.326172)
-texture = ExtResource("16_hh1sk")
-
-[node name="GunShop" type="Panel" parent="ShopPopup"]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0416667
-anchor_bottom = 0.142857
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 72.0
-offset_bottom = 96.0
-metadata/_edit_use_anchors_ = true
-
-[node name="buyButton" type="Button" parent="ShopPopup/GunShop"]
-modulate = Color(1, 1, 1, 0.545098)
-layout_mode = 0
-offset_left = -24.844
-offset_top = 47.0
-offset_right = 80.156
-offset_bottom = 78.0
-text = "BUY"
-
-[node name="Sprite2D" type="Sprite2D" parent="ShopPopup/GunShop"]
-position = Vector2(32.156, -3)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("7_v78o6")
-
-[node name="GunInfo" type="Label" parent="ShopPopup/GunShop"]
-layout_mode = 0
-offset_left = -12.844
-offset_top = -64.0
-offset_right = 72.156
-offset_bottom = -41.0
-text = "GUN UPGRADE"
-label_settings = SubResource("LabelSettings_tln3g")
-
-[node name="Label2" type="Label" parent="ShopPopup/GunShop"]
-layout_mode = 0
-offset_left = 1.15601
-offset_top = 24.0
-offset_right = 80.156
-offset_bottom = 47.0
-text = "10 SAMPLE"
-label_settings = SubResource("LabelSettings_qceo5")
-
-[node name="Sprite2D2" type="Sprite2D" parent="ShopPopup/GunShop"]
-position = Vector2(-13.844, 35)
-scale = Vector2(0.800001, 0.8)
-texture = ExtResource("9_bhm4y")
-
 [node name="enemyspawner" parent="." instance=ExtResource("13_of0h2")]
 spawns = Array[ExtResource("14_8loo2")]([SubResource("Resource_ftf63")])
 
 [node name="EntitiesLayer" type="Node2D" parent="." groups=["EntitiesLayer"]]
 
-[node name="Merchant2" parent="." instance=ExtResource("5_vo7xe")]
-position = Vector2(1399.84, -337)
-flip_h = true
+[node name="player" parent="." instance=ExtResource("4_q1opb")]
+position = Vector2(514, -273)
 
-[node name="playerDetector2" type="Area2D" parent="Merchant2"]
-script = ExtResource("20_svnra")
+[node name="CanvasLayer2" type="CanvasLayer" parent="player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Merchant2/playerDetector2"]
-position = Vector2(-121.112, 386.358)
-shape = SubResource("RectangleShape2D_7jqw2")
-
-[node name="ShopPopup2" type="Panel" parent="."]
+[node name="ShopPopup" type="Panel" parent="player/CanvasLayer2"]
 visible = false
 anchors_preset = -1
 anchor_left = -0.028
 anchor_top = -0.049
 anchor_right = -0.028
 anchor_bottom = -0.049
-offset_left = 1471.84
-offset_top = -406.0
-offset_right = 1663.84
-offset_bottom = -294.0
+offset_left = 162.256
+offset_top = 82.752
+offset_right = 354.256
+offset_bottom = 194.752
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D3" type="Sprite2D" parent="ShopPopup2"]
-position = Vector2(16.16, 40)
-scale = Vector2(0.326172, 0.326172)
-texture = ExtResource("16_hh1sk")
+[node name="Sprite2D2" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup"]
+modulate = Color(0.6, 0.6, 0.6, 0.866667)
+position = Vector2(306, 168)
+scale = Vector2(9.90909, 3.24444)
+texture = ExtResource("27_3vkue")
 
-[node name="GunShop" type="Panel" parent="ShopPopup2"]
+[node name="GunShop" type="Panel" parent="player/CanvasLayer2/ShopPopup"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
@@ -3419,46 +3380,206 @@ offset_right = 72.0
 offset_bottom = 96.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Ammo" type="Button" parent="ShopPopup2/GunShop"]
-modulate = Color(1, 1, 1, 0.545098)
-layout_mode = 0
-offset_left = -45.84
-offset_top = 63.0
-offset_right = 59.16
-offset_bottom = 94.0
-text = "BUY"
+[node name="B36e94ab2fe531b1" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(123, 173)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("28_acdsr")
+flip_h = true
 
-[node name="Sprite2D" type="Sprite2D" parent="ShopPopup2/GunShop"]
-position = Vector2(8.16004, 8)
-scale = Vector2(0.425521, 0.4375)
-texture = ExtResource("19_6n4bt")
-
-[node name="GunInfo" type="Label" parent="ShopPopup2/GunShop"]
+[node name="ColorRect" type="ColorRect" parent="player/CanvasLayer2/ShopPopup/GunShop"]
 layout_mode = 0
-offset_left = -30.84
-offset_top = -57.0
-offset_right = 54.16
-offset_bottom = -34.0
-text = "AMMO SHOP
-"
+offset_left = 446.0
+offset_top = 14.0
+offset_right = 447.0
+offset_bottom = 358.0
+color = Color(0.478431, 0.478431, 0.478431, 0.333333)
+
+[node name="buyButton" type="Button" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 135.0
+offset_right = 383.0
+offset_bottom = 197.0
+disabled = true
+text = "aa"
+flat = true
+
+[node name="GunInfo" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = -48.0
+offset_right = 480.0
+offset_bottom = 4.0
+text = "GUN UPGRADE"
 label_settings = SubResource("LabelSettings_tln3g")
 
-[node name="Label2" type="Label" parent="ShopPopup2/GunShop"]
+[node name="NBuy" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(276.5, 166.5)
+texture = ExtResource("29_tcakq")
+
+[node name="Label2" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop"]
 layout_mode = 0
-offset_left = -18.84
-offset_top = 39.0
-offset_right = 60.16
-offset_bottom = 62.0
-text = "2 SAMPLE"
+offset_left = 353.5
+offset_top = 151.5
+offset_right = 378.5
+offset_bottom = 182.5
+text = "10"
 label_settings = SubResource("LabelSettings_qceo5")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ShopPopup2/GunShop"]
-position = Vector2(-34.84, 50)
-scale = Vector2(0.800001, 0.8)
+[node name="Sprite2D2" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(338.5, 166.5)
 texture = ExtResource("9_bhm4y")
 
-[node name="player" parent="." instance=ExtResource("4_q1opb")]
-position = Vector2(514, -273)
+[node name="Bought" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+visible = false
+position = Vector2(276, 166)
+texture = ExtResource("30_phiuc")
+
+[node name="TextureButton" type="TextureButton" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = -120.0
+offset_top = 89.0
+offset_right = 242.0
+offset_bottom = 224.0
+texture_normal = ExtResource("31_hdvwd")
+texture_pressed = ExtResource("32_cdt78")
+
+[node name="9f99652cab701fd3" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(32, 5)
+texture = ExtResource("33_7b3gn")
+
+[node name="9f99652cab701fd4" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(581, 5)
+texture = ExtResource("33_7b3gn")
+flip_h = true
+
+[node name="ColorRect2" type="ColorRect" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 274.0
+offset_right = 324.0
+offset_bottom = 280.0
+
+[node name="ColorRect" type="ColorRect" parent="player/CanvasLayer2/ShopPopup/GunShop/ColorRect2"]
+layout_mode = 0
+offset_top = -42.0
+offset_right = 6.0
+offset_bottom = 2.0
+
+[node name="Asdfghdsafgmhhgfddfghjjhgfdsfghk" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(351, 276)
+scale = Vector2(0.788, 0.788)
+texture = ExtResource("30_sx5uq")
+
+[node name="Label3" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 261.0
+offset_right = 381.0
+offset_bottom = 292.0
+text = "2
+"
+label_settings = SubResource("LabelSettings_qceo5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+position = Vector2(339, 276)
+texture = ExtResource("9_bhm4y")
+
+[node name="Ammo" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+visible = false
+position = Vector2(351, 276)
+scale = Vector2(0.7875, 0.7875)
+texture = ExtResource("19_6n4bt")
+
+[node name="Button" type="Button" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 245.0
+offset_right = 383.0
+offset_bottom = 308.0
+
+[node name="Ammo2" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup/GunShop"]
+visible = false
+position = Vector2(579, 108)
+texture = ExtResource("19_6n4bt")
+
+[node name="Label" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop/Ammo2"]
+offset_left = -69.0
+offset_top = -80.0
+offset_right = 70.0
+offset_bottom = -46.0
+text = "Resupply"
+label_settings = SubResource("LabelSettings_umbib")
+
+[node name="Label5" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop/Ammo2"]
+offset_left = -126.0
+offset_top = 45.0
+offset_right = -39.0
+offset_bottom = 71.0
+text = "AMMO"
+label_settings = SubResource("LabelSettings_rmyva")
+
+[node name="Ammocount" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop/Ammo2"]
+offset_left = -26.0
+offset_top = 45.0
+offset_right = 61.0
+offset_bottom = 71.0
+text = "50"
+label_settings = SubResource("LabelSettings_rmyva")
+
+[node name="Label3" type="Label" parent="player/CanvasLayer2/ShopPopup/GunShop/Ammo2"]
+offset_left = -115.0
+offset_top = 88.0
+offset_right = 150.0
+offset_bottom = 185.0
+text = "Resupply gives you 50 ammunition
+instantly."
+label_settings = SubResource("LabelSettings_qs12b")
+
+[node name="Timer" type="Timer" parent="player/CanvasLayer2/ShopPopup/GunShop/Ammo2"]
+
+[node name="Liberator" type="Sprite2D" parent="player/CanvasLayer2/ShopPopup"]
+visible = false
+position = Vector2(589, 122)
+texture = ExtResource("7_v78o6")
+
+[node name="Label" type="Label" parent="player/CanvasLayer2/ShopPopup/Liberator"]
+offset_left = -120.0
+offset_top = -78.0
+offset_right = 134.0
+offset_bottom = -42.0
+text = "AR-19 'Liberator'"
+label_settings = SubResource("LabelSettings_k8fft")
+
+[node name="Label4" type="Label" parent="player/CanvasLayer2/ShopPopup/Liberator"]
+offset_left = -128.0
+offset_top = 47.0
+offset_right = -41.0
+offset_bottom = 73.0
+text = "POWER"
+label_settings = SubResource("LabelSettings_rmyva")
+
+[node name="Label2" type="Label" parent="player/CanvasLayer2/ShopPopup/Liberator"]
+offset_left = -117.0
+offset_top = 90.0
+offset_right = 138.0
+offset_bottom = 187.0
+text = "Fully automatic assault rifle. Reliable
+and powerful, it's good for dealing
+with most threats."
+label_settings = SubResource("LabelSettings_qs12b")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="player/CanvasLayer2/ShopPopup/Liberator"]
+offset_left = -28.0
+offset_top = 51.0
+offset_right = 125.0
+offset_bottom = 91.0
+min_value = 1.0
+max_value = 10.0
+value = 4.0
+texture_under = ExtResource("34_85fpn")
+texture_progress = ExtResource("35_f4nar")
 
 [node name="Area2D" parent="." instance=ExtResource("24_k0ivg")]
 position = Vector2(1044, -699)
@@ -3510,18 +3631,9 @@ offset_bottom = -379.0
 text = "GUN MERCHANT"
 label_settings = SubResource("LabelSettings_k3o40")
 
-[node name="Label2" type="Label" parent="."]
-visible = false
-offset_left = 1233.0
-offset_top = -455.0
-offset_right = 1606.0
-offset_bottom = -403.0
-text = "AMMO MERCHANT"
-label_settings = SubResource("LabelSettings_k3o40")
-
 [connection signal="body_entered" from="Merchant/playerDetector2" to="Merchant/playerDetector2" method="_on_body_entered"]
 [connection signal="body_exited" from="Merchant/playerDetector2" to="Merchant/playerDetector2" method="_on_body_exited"]
-[connection signal="pressed" from="ShopPopup/GunShop/buyButton" to="." method="_on_buy_button_pressed"]
-[connection signal="body_entered" from="Merchant2/playerDetector2" to="Merchant2/playerDetector2" method="_on_body_entered"]
-[connection signal="body_exited" from="Merchant2/playerDetector2" to="Merchant2/playerDetector2" method="_on_body_exited"]
-[connection signal="pressed" from="ShopPopup2/GunShop/Ammo" to="." method="_on_ammo_pressed"]
+[connection signal="pressed" from="player/CanvasLayer2/ShopPopup/GunShop/buyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="player/CanvasLayer2/ShopPopup/GunShop/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="player/CanvasLayer2/ShopPopup/GunShop/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="player/CanvasLayer2/ShopPopup/GunShop/Ammo2/Timer" to="." method="_on_timer_timeout"]

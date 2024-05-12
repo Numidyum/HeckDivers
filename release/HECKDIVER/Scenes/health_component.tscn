@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bji26ten5jipv"]
-
-[ext_resource type="Script" path="res://Scripts/HealthComponent.gd" id="1_ycj3v"]
-
-[node name="HealthComponent" type="Node"]
-script = ExtResource("1_ycj3v")
-
-[node name="Timer" type="Timer" parent="."]

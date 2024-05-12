@@ -3,6 +3,7 @@ extends Area2D
 var dmg
 
 func _physics_process(delta):
+
 	position += transform.x * speed * delta
 	await get_tree().create_timer(0.01)
 
